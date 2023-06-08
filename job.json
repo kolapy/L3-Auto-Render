@@ -1,13 +1,13 @@
 {
     "template": {
-        "src": "file:///Users/grjohns/Desktop/Nextrendertest/l3.aep",
+        "src": "https://github.com/kolapy/L3-Auto-Render/raw/main/l3.aep",
         "composition": "main",
-        "outputModule": "H.264 - Match Render Settings - 15 Mbps",
-        "outputExt": "mp4",
+        "outputModule": "QT-alpha",
+        "outputExt": "mov",
         "settingsTemplate": "Best Settings"
         
     },
-    "assets": [
+    "assets": [ 
         {
             "type": "data",
             "layerName": "Name",
@@ -20,10 +20,14 @@
             "property": "Source Text",
             "expression": "'A Guy, OpenText'"
         }
-    
+
     ],
     "actions":{
         "postrender": [
+            {
+                "module":"@nexrender/action-copy",
+                "output":"/Users/grjohns/Desktop/Nextrendertest/"
+            },
             {
                 "module": "@nexrender/action-encode",
                 "preset": "mp4",

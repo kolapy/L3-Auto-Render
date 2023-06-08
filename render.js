@@ -22,6 +22,10 @@ const outputDirectory = './output';
 if (!fs.existsSync(outputDirectory)) {
   fs.mkdirSync(outputDirectory);
 }
+const previewDirectory = './output/preview';
+if (!fs.existsSync(previewDirectory)) {
+  fs.mkdirSync(previewDirectory);
+}
 
 //CSV parsing and checking function.  UNUSED
 const nameParse = () => {
@@ -84,6 +88,7 @@ const main = async () => {
   const jobData = fs.readFileSync(jsonPath);
   const jobTemplate = JSON.parse(jobData);
   const outputDir = path.join(__dirname,'/output');
+  const previewDir = path.join(__dirname,'/output/preview');
 
   /*const people = [
     { name: 'John Smith', title: 'Engineer' },
@@ -94,7 +99,7 @@ const main = async () => {
   const people = [];
 
   fs.createReadStream(csvFilePath)
-  .pipe(parse({ delimiter: ",", from_line: 2 }))
+  .pipe(parse({ delimiter: ";", from_line: 2 }))
   .on("data", function (row) {
     console.log(row);
     const name = row[0];
@@ -124,7 +129,8 @@ const main = async () => {
       console.log('People:', people);
 
       const jobs = people.map(person => {
-        const personOutputDir = path.join(outputDir, person.name+'.mp4');
+        const personOutputDir = path.join(previewDir, person.name+'.mp4');
+        const personOutputDirMOV = path.join(outputDir, person.name+'.mov')
         console.log(personOutputDir);
         return {
           ...jobTemplate,
@@ -134,6 +140,10 @@ const main = async () => {
           ],
           actions:{
             postrender: [
+                {
+                    module:"@nexrender/action-copy",
+                    output: personOutputDirMOV
+                },
                 {
                     module: '@nexrender/action-encode',
                     preset: 'mp4',
