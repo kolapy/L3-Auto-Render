@@ -2,8 +2,10 @@
 
 #Install HomeBrew and Node
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo "Installed HomeBrew"
 
 brew install node
+echo "Installed Node"
 
 # Function to find the Node.js installation path
 find_node_path() {
