@@ -4,7 +4,7 @@ Automated lower third rendering for bulk lists of names and titles.
 This script is very simple and usliizes Nexrender for rendering After Effects files.
 
 ## Install instructions
-To install this script download the install.sh shell script for the releases section.   Run it with the following command
+To install this script download the install.sh shell script from the releases section.   Run it with the following command
 
 ```
 ./install.sh 
