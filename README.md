@@ -6,7 +6,7 @@ This script is very simple and usliizes Nexrender for rendering After Effects fi
 ## Install instructions
 To install this script download the install.sh shell script for the releases section.   Run it with the following command
 
-''' 
+'''bash
 ./install.sh 
 '''
 
