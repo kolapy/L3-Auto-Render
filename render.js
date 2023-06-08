@@ -1,5 +1,5 @@
 /* TODO
-1. Package this up and distribute on GIThub
+1. Package this up and distribute on GIThub --DONE
 2. MAke s hell script for install
 3. Make a shell script for running it.
 4. Set it up so that the script renders mp4 previews as well as proper alpha files
