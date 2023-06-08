@@ -1,0 +1,18 @@
+{
+    "template": {
+      "src": "path/to/template/file.aep"
+    },
+    "assets": [
+      {
+        "src": "path/to/asset/file",
+        "type": "image",
+        "layerName": "myLayer"
+      }
+    ],
+    "output": {
+      "module": "file",
+      "settings": {
+        "path": "path/to/output/file.mov"
+      }
+    }
+  }
